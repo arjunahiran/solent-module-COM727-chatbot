@@ -1,0 +1,27 @@
+{
+  "intents": [
+    {
+      "tag": "test.greetings",
+      "questions": [
+        "Hello",
+        "Hey!",
+        "What's up",
+        "Good morning"
+      ],
+      "responses": [
+        "Hello!",
+        "Hey!",
+        "What can I do for you?"
+      ]
+    },
+    {
+      "tag": "Default",
+      "questions": [
+        ""
+      ],
+      "responses": [
+        "Please ask me anything."
+      ]
+    }
+  ]
+}

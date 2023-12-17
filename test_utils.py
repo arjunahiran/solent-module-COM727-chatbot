@@ -19,7 +19,7 @@ def test_remove_unwanted_words():
     """
     Test remove_unwanted_words function.
     """
-    print("### test_remove_unwanted_words:")
+    print(f"### {test_remove_unwanted_words.__name__}:")
 
     word_list = ["hi", "hello", "man", "gate", "book"]
     word_list_to_remove = ["hi", "man", "book"]
@@ -34,6 +34,8 @@ def test_remove_unwanted_words():
 
 
 def test_read_intents():
+    print(f"### {test_read_intents.__name__}:")
+
     file_path = "test_intents.json"
 
     # test intents file
@@ -72,6 +74,8 @@ def test_read_intents():
 
 
 def test_generate_training_data():
+    print(f"### {test_generate_training_data.__name__}:")
+
     file_path = "test_intents.json"
 
     # test intents file

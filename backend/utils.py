@@ -154,3 +154,26 @@ def train_chatbot_model(training_data, epochs):
     )
 
     return (model, history)
+
+
+def predict_tag(question, words, tags, model):
+    """
+    Predict a tag for a given question.
+    """
+    # tokenize and clean the given question
+    question = tokenize_and_clean(question)
+
+    # generate x data for the prediction
+    x_data = generate_bag_of_words(words, question)
+
+    # performe the prediction
+    prediction = model.predict(np.array([x_data]))[0]
+
+    return tags[np.argmax(prediction)]
+
+
+def generate_response(tag, responses):
+    """
+    Generate a random choice given the responses.
+    """
+    return random.choice(responses[tag])

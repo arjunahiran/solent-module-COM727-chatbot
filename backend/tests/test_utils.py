@@ -148,6 +148,67 @@ def test_train_chatbot_model():
     result(model != None)
 
 
+def test_predict_tag():
+    """
+    Test test_predict_tag function.
+    """
+    print(f"### {test_predict_tag.__name__}:")
+
+    file_path = "test_intents.json"
+
+    # test intents file
+    test_intents_data = {
+        "intents": [
+            {
+                "tag": "test.greetings",
+                "questions": ["Hello", "Hey!", "What's up", "Good morning"],
+                "responses": ["Hello!", "Hey!", "What can I do for you?"],
+            },
+            {
+                "tag": "Default",
+                "questions": [""],
+                "responses": ["Please ask me anything."],
+            },
+        ]
+    }
+
+    # write test intents data to a file
+    with open(file_path, "w", encoding="utf-8") as test_file:
+        json.dump(test_intents_data, test_file, indent=2)
+
+    # read the intents file
+    words, tags, questions, responses = read_intents(file_path)
+
+    # train the model
+    training_data = generate_training_data(words, tags, questions)
+    model, _ = train_chatbot_model(training_data, epochs=10)
+
+    tag = predict_tag("morning", words, tags, model)
+
+    result(tag == "test.greetings")
+
+
+def test_generate_response():
+    """
+    Test test_generate_response function.
+    """
+    print(f"### {test_generate_response.__name__}:")
+
+    responses = {
+        "test.greetings": ["Hello!", "Hey!", "What can I do for you?"],
+        "default": ["Please ask me anything."],
+    }
+
+    response = generate_response("test.greetings", responses)
+    printfmt("Response", response)
+
+    result(
+        response == "Hello!"
+        or response == "Hey!"
+        or response == "What can I do for you?"
+    )
+
+
 def test():
     """
     Test all functions.
@@ -157,6 +218,8 @@ def test():
     test_read_intents()
     test_generate_training_data()
     test_train_chatbot_model()
+    test_predict_tag()
+    test_generate_response()
     print(f"{' Testing: END ':=^30}")
 
 

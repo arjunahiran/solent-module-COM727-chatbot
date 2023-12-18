@@ -143,9 +143,9 @@ def test_train_chatbot_model():
         [[0, 0, 1, 0], [0, 1]],
     ]
 
-    hst = train_chatbot_model(training_data, epochs=10)
+    model, _ = train_chatbot_model(training_data, epochs=10)
 
-    result(hst != None)
+    result(model != None)
 
 
 def test():

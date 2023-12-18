@@ -118,7 +118,7 @@ def generate_training_data(words, tags, questions):
 def train_chatbot_model(training_data, epochs):
     """
     Train the chatbot model using the given tranning data and
-    returns the History object returned by the model fit function.
+    returns the model and History object returned by the model fit function.
     """
     # randomly shuffle training data
     random.shuffle(training_data)
@@ -144,4 +144,4 @@ def train_chatbot_model(training_data, epochs):
         np.array(x_train), np.array(y_train), epochs=epochs, batch_size=5, verbose=1
     )
 
-    return history
+    return (model, history)

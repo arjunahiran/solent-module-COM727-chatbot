@@ -88,6 +88,18 @@ def read_intents(file_path):
     return out_words, out_tags, out_questions, out_responses
 
 
+def generate_bag_of_words(words, question):
+    """
+    Generate a bag of words found in the question.
+    """
+    bow = []
+
+    for word in words:
+        bow.append(1) if word in question else bow.append(0)
+
+    return bow
+
+
 def generate_training_data(words, tags, questions):
     """
     Generate training data for each question.
@@ -101,10 +113,7 @@ def generate_training_data(words, tags, questions):
         question, tag = (row[0], row[1])
 
         # generate x data for each question
-        x_data = []
-
-        for word in words:
-            x_data.append(1) if word in question else x_data.append(0)
+        x_data = generate_bag_of_words(words, question)
 
         # generate y data for each question
         y_data = list(y_empty)

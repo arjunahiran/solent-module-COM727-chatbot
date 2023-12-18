@@ -1,9 +1,14 @@
 import json
 import nltk
+import random
+import numpy as np
 
 from nltk import tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
 
 nltk.download("wordnet")
 nltk.download("stopwords")
@@ -108,3 +113,35 @@ def generate_training_data(words, tags, questions):
         training_data.append([x_data, y_data])
 
     return training_data
+
+
+def train_chatbot_model(training_data, epochs):
+    """
+    Train the chatbot model using the given tranning data and
+    returns the History object returned by the model fit function.
+    """
+    # randomly shuffle training data
+    random.shuffle(training_data)
+    training_data = np.array(training_data, dtype=object)
+
+    x_train = list(training_data[:, 0])
+    y_train = list(training_data[:, 1])
+
+    # create the training model
+    model = Sequential()
+    model.add(Dense(128, input_shape=(len(x_train[0]),), activation="relu"))
+    model.add(Dropout(0.5))
+    model.add(Dense(64, activation="relu"))
+    model.add(Dropout(0.5))
+    model.add(Dense(len(y_train[0]), activation="softmax"))
+
+    model.compile(
+        loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"]
+    )
+
+    # train the model
+    history = model.fit(
+        np.array(x_train), np.array(y_train), epochs=epochs, batch_size=5, verbose=1
+    )
+
+    return history

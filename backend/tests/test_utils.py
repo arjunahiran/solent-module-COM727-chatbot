@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("../")
+
 from utils import *
 
 
@@ -34,6 +38,9 @@ def test_remove_unwanted_words():
 
 
 def test_read_intents():
+    """
+    Test read_intents function.
+    """
     print(f"### {test_read_intents.__name__}:")
 
     file_path = "test_intents.json"
@@ -74,6 +81,9 @@ def test_read_intents():
 
 
 def test_generate_training_data():
+    """
+    Test test_generate_training_data function.
+    """
     print(f"### {test_generate_training_data.__name__}:")
 
     file_path = "test_intents.json"
@@ -120,6 +130,24 @@ def test_generate_training_data():
     result(training_data == training_data_exp)
 
 
+def test_train_chatbot_model():
+    """
+    Test test_train_chatbot_model function.
+    """
+    print(f"### {test_train_chatbot_model.__name__}:")
+
+    training_data = [
+        [[0, 0, 0, 0], [1, 0]],
+        [[1, 0, 0, 1], [0, 1]],
+        [[0, 1, 0, 0], [0, 1]],
+        [[0, 0, 1, 0], [0, 1]],
+    ]
+
+    hst = train_chatbot_model(training_data, epochs=10)
+
+    result(hst != None)
+
+
 def test():
     """
     Test all functions.
@@ -128,6 +156,7 @@ def test():
     test_remove_unwanted_words()
     test_read_intents()
     test_generate_training_data()
+    test_train_chatbot_model()
     print(f"{' Testing: END ':=^30}")
 
 

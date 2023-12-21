@@ -1,7 +1,7 @@
 {
     "intents": [
         {
-            "tag": "test.greetings",
+            "tag": "greetings",
             "questions": [
                 "Hello",
                 "Hey!",
@@ -12,6 +12,84 @@
                 "Hello!",
                 "Hey!",
                 "What can I do for you?"
+            ]
+        },
+        {
+            "tag": "decision.trees.introduce",
+            "questions": [
+                "What are Decision Trees?",
+                "Explain Decision Trees",
+                "Tell me about Decision Trees",
+                "Introduction to Decision Trees"
+            ],
+            "responses": [
+                "Decision Trees are a type of algorithm used for both classification and regression tasks in machine learning."
+            ]
+        },
+        {
+            "tag": "decision.tree.basics",
+            "questions": [
+                "What are the basic components of a Decision Tree?",
+                "Explain the nodes in a Decision Tree",
+                "Tell me about branches and leaves in Decision Trees"
+            ],
+            "responses": [
+                "A Decision Tree consists of nodes, branches, and leaves. Nodes represent decision points, branches represent possible decisions, and leaves represent the outcomes."
+            ]
+        },
+        {
+            "tag": "decision.tree.algorithm",
+            "questions": [
+                "How does the Decision Tree algorithm work?",
+                "Explain the decision-making process in Decision Trees",
+                "Describe the steps in building a Decision Tree"
+            ],
+            "responses": [
+                "The Decision Tree algorithm works by recursively splitting the dataset based on the most significant feature at each node, creating a tree-like structure that can be used for decision-making."
+            ]
+        },
+        {
+            "tag": "decision.trees.advantages",
+            "questions": [
+                "What are the advantages of using Decision Trees?",
+                "Why choose Decision Trees for classification?",
+                "Benefits of Decision Tree algorithms"
+            ],
+            "responses": [
+                "Decision Trees are easy to understand, interpret, and visualize. They can handle both numerical and categorical data and are less sensitive to outliers."
+            ]
+        },
+        {
+            "tag": "decision.tree.applications",
+            "questions": [
+                "Where can Decision Trees be applied?",
+                "Give examples of Decision Tree applications",
+                "Real-world uses of Decision Trees"
+            ],
+            "responses": [
+                "Decision Trees find applications in various fields, including finance, healthcare, and marketing. They are used for credit scoring, disease diagnosis, and customer segmentation."
+            ]
+        },
+        {
+            "tag": "decision.trees.overfitting",
+            "questions": [
+                "What is overfitting in Decision Trees?",
+                "Explain overfitting and its impact on Decision Trees",
+                "How to prevent overfitting in Decision Trees?"
+            ],
+            "responses": [
+                "Overfitting in Decision Trees occurs when the model captures noise in the training data, leading to poor generalization. It can be prevented through techniques like pruning and setting minimum sample requirements."
+            ]
+        },
+        {
+            "tag": "decision.tree.pruning",
+            "questions": [
+                "What is pruning in Decision Trees?",
+                "Explain the process of pruning a Decision Tree",
+                "Benefits of pruning in Decision Trees"
+            ],
+            "responses": [
+                "Pruning in Decision Trees involves removing branches that do not provide significant information. It helps prevent overfitting and improves the model's performance on new data."
             ]
         },
         {

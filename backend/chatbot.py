@@ -2,7 +2,8 @@ import pickle
 import utils
 import numpy as np
 
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
 from keras.models import load_model
 
 # load the chatbot model
@@ -15,16 +16,19 @@ model = load_model(f"{out_dir}/chatbot_model.keras")
 
 # create a flask api service
 app = Flask(__name__)
+CORS(app)
 
 
-@app.route("/api/<question>")
-def chatbot_api(question):
+@app.post("/api/chat")
+def chat():
     """
-    Chatbot api service. Service is available at http://127.0.0.1:5000/api/<question>
-    for example:
+    Chatbot api service.
 
-    http://127.0.0.1:5000/api/good%20morning
+    Service is available at http://127.0.0.1:5000/api/chat
     """
+    question = request.json.get("question")
+
+    print(request.json)
 
     # predict a tag for the given question
     tag = utils.predict_tag(question, words, tags, model)
@@ -32,7 +36,4 @@ def chatbot_api(question):
     # generate the response for the predicted tag
     response = utils.generate_response(tag, responses)
 
-    return {
-        "question": question,
-        "response": response,
-    }
+    return {"question": question, "response": response}

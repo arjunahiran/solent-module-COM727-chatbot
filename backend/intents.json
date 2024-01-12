@@ -100,6 +100,119 @@
             "responses": [
                 "Please ask me anything."
             ]
-        }
+        },
+        {
+            "tag": "regression_general",
+            "questions": [
+              "What is regression in machine learning?",
+              "Explain regression analysis in the context of machine learning.",
+              "How is regression used in machine learning?",
+              "Applications of regression in ML",
+              "Difference between regression and classification in machine learning"
+            ],
+            "responses": [
+              "Regression in machine learning involves predicting a continuous outcome variable based on input features.",
+              "Regression analysis in machine learning is a method used to model the relationship between a dependent variable and one or more independent variables.",
+              "Regression is widely used in machine learning for tasks such as predicting sales, stock prices, and other numerical values.",
+              "Applications of regression in machine learning include financial forecasting, healthcare predictions, and demand forecasting.",
+              "The main difference between regression and classification in machine learning is that regression predicts continuous outcomes, while classification predicts categorical outcomes."
+            ]
+          },
+          {
+            "tag": "single_regression",
+            "questions": [
+              "What is single regression?",
+              "Explain simple linear regression.",
+              "Give an example of a single regression problem.",
+              "How does single regression differ from multiple regression?"
+            ],
+            "responses": [
+              "Single regression, or simple linear regression, models the relationship between a dependent variable and a single independent variable.",
+              "Simple linear regression is a linear approach to modeling the relationship between a dependent variable and a single independent variable.",
+              "An example of a single regression problem is predicting the score of a student based on the number of hours they studied for an exam.",
+              "The main difference between single regression and multiple regression is that single regression involves one independent variable, while multiple regression involves two or more independent variables."
+            ]
+          },
+          {
+            "tag": "multiple_regression",
+            "questions": [
+              "What is multiple regression?",
+              "Explain multiple linear regression.",
+              "When is multiple regression used?",
+              "Give an example of a multiple regression problem."
+            ],
+            "responses": [
+              "Multiple regression models the relationship between a dependent variable and two or more independent variables.",
+              "Multiple linear regression is an extension of simple linear regression to multiple independent variables.",
+              "Multiple regression is used when there are multiple factors influencing the dependent variable.",
+              "An example of a multiple regression problem is predicting the price of a house based on features like square footage, number of bedrooms, and location."
+            ]
+          },
+          {
+            "tag": "multivariate_regression",
+            "questions": [
+              "What is multivariate regression?",
+              "Explain the difference between multivariate regression and multiple regression.",
+              "When is multivariate regression appropriate?",
+              "Give an example of a multivariate regression problem."
+            ],
+            "responses": [
+              "Multivariate regression involves predicting multiple dependent variables based on one or more independent variables.",
+              "The main difference between multivariate regression and multiple regression is that multiple regression involves predicting one dependent variable with multiple independent variables, while multivariate regression involves predicting multiple dependent variables.",
+              "Multivariate regression is appropriate when there are multiple related outcomes that need to be predicted simultaneously.",
+              "An example of a multivariate regression problem is predicting both the sales and profit of a product based on various marketing and operational factors."
+            ]
+          },
+          {
+            "tag": "regression",
+            "questions": [
+              "What is regression?",
+              "Explain linear regression.",
+              "Can you help with a regression problem?",
+              "Regression algorithms",
+              "How does regression work?",
+              "Give an example of regression analysis"
+            ],
+            "responses": [
+              "Regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables.",
+              "Linear regression is a type of regression analysis that models the relationship between a dependent variable and a linear combination of independent variables.",
+              "Sure, I can help with regression problems. Please provide more details about your specific question or issue.",
+              "Some popular regression algorithms include linear regression, polynomial regression, and support vector regression.",
+              "In a regression analysis, the goal is to predict a continuous outcome variable based on one or more predictor variables. For example, predicting house prices based on features like square footage, number of bedrooms, and location."
+            ]
+          },
+          {
+            "tag": "classification",
+            "questions": [
+              "What is classification?",
+              "Explain logistic regression.",
+              "Can you assist with a classification problem?",
+              "Types of classification algorithms",
+              "How does classification work?",
+              "Give an example of a classification problem"
+            ],
+            "responses": [
+              "Classification is a machine learning task that involves assigning a label to an input based on its features.",
+              "Logistic regression is a classification algorithm used for binary classification problems.",
+              "Certainly! I can help with classification problems. Please provide more details about your specific question or issue.",
+              "Types of classification algorithms include decision trees, random forests, support vector machines, and k-nearest neighbors.",
+              "In a classification problem, the goal is to categorize input data into predefined classes. For instance, classifying emails as spam or not spam based on features like sender, subject, and content."
+            ]
+          },
+          {
+            "tag": "feature_selection",
+            "questions": [
+              "What is feature selection?",
+              "Why is feature selection important in regression?",
+              "Methods for feature selection",
+              "How to choose relevant features for classification?"
+            ],
+            "responses": [
+              "Feature selection is the process of choosing a subset of relevant features for building a model.",
+              "In regression, feature selection is crucial to avoid overfitting and improve model interpretability.",
+              "Common methods for feature selection include filter methods, wrapper methods, and embedded methods.",
+              "In classification, selecting relevant features is essential for improving model accuracy and reducing computational complexity."
+            ]
+          }
     ]
 }

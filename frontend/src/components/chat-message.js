@@ -25,7 +25,7 @@ export default Typewriter;
 export const ChatMessage = ({ message }) => {
   function UserIcon() {
     return (
-      <div className="flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow bg-background text-gray-500">
+      <div className="flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow bg-background text-black">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 256"

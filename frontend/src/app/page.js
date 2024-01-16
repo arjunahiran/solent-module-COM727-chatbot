@@ -84,11 +84,13 @@ export default function Home() {
               You can start a conversation here or try the following examples:
             </p>
             <div className="mt-4 flex flex-col items-start space-y-2 font-medium">
+              <ButtonLink>What is Artificial Intelligence</ButtonLink>
+              <ButtonLink>Could you explain Machine Learning?</ButtonLink>
               <ButtonLink>What are Decision Trees?</ButtonLink>
               <ButtonLink>
                 How does the Decision Tree algorithm work?
               </ButtonLink>
-              <ButtonLink>Where can Decision Trees be applied?</ButtonLink>
+              <ButtonLink>What is K-Means Clustering</ButtonLink>
             </div>
           </div>
         </div>
